@@ -15,9 +15,9 @@ async function getWeather(lat, lon)
 
 async function getMap()
 {
-    let myMap = L.map("map").setView([39.8333333333, -92.5104000000], 5);
+    let myMap = L.map("map").setView([39.8333333333, -92.5104000000], 4);
 
-    let tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 19, attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"}).addTo(myMap);
+    let tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 20, attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"}).addTo(myMap);
 
     // Sacramento, California
     let lat = 38.575764;
@@ -30,6 +30,18 @@ async function getMap()
     lon = -116.215019;
     weather = await getWeather(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Boise, Idaho " + weather);
+
+    // Helena, Montana
+    lat = 46.595806;
+    lon = -112.027031;
+    weather = await getWeather(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Helena, Montana " + weather);
+
+    // Carson City, Nevada
+    lat = 39.162418;
+    lon = -119.787010;
+    weather = await getWeather(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Carson City, Nevada " + weather);
     
     // Albany, New York
     lat = 42.652580;
