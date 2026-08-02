@@ -19,11 +19,23 @@ async function getMap()
 
     let tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 20, attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"}).addTo(myMap);
 
+    // Phoenix, Arizona
+    lat = 33.448376;
+    lon = -112.074036;
+    weather = await getWeather(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Phoenix, Arizona " + weather);
+    
     // Sacramento, California
     lat = 38.575764;
     lon = -121.478851;
     weather = await getWeather(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Sacramento, California " + weather);
+
+    // Denver, Colorado
+    lat = 39.742043;
+    lon = -104.991531;
+    weather = await getWeather(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Denver, Colorado " + weather);
 
     // Boise, Idaho
     lat = 43.618881;
@@ -31,6 +43,12 @@ async function getMap()
     weather = await getWeather(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Boise, Idaho " + weather);
 
+    // Helena, Montana
+    lat = 46.595806;
+    lon = -112.027031;
+    weather = await getWeather(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Helena, Montana " + weather);
+    
     // Carson City, Nevada
     lat = 39.162418;
     lon = -119.787010;
@@ -43,11 +61,23 @@ async function getMap()
     weather = await getWeather(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Salem, Oregon " + weather);
 
+    // Salt Lake City, Utah
+    lat = 40.758701;
+    lon = -111.876183;
+    weather = await getWeather(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Salt Lake City, Utah " + weather);
+
     // Olympia, Washington
     lat = 47.037872;
     lon = -122.900696;
     weather = await getWeather(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Olympia, Washington " + weather);
+
+    // Cheyenne, Wyoming
+    lat = 41.161079;
+    lon = -104.805450;
+    weather = await getWeather(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Cheyenne, Wyoming " + weather);
 }
 
 setInterval( function() { getMap(); }, 60 * 1000 * 15);
