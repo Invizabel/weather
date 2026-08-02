@@ -15,7 +15,7 @@ async function getUnitedStates(lat, lon)
 
 async function getMap()
 {
-    let myMap = L.map("map").setView([39.8333333333, -92.5104000000], 0);
+    let myMap = L.map("map").setView([39.8333333333, -92.5104000000], 1);
 
     let tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 20, attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"}).addTo(myMap);
 
