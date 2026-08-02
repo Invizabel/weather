@@ -19,60 +19,42 @@ async function getMap()
 
     let tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 20, attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"}).addTo(myMap);
 
-    // Sacramento, California
-    let lat = 38.575764;
-    let lon = -121.478851;
-    let weather = await getWeather(lat, lon);
-    let tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Sacramento, California " + weather);
-
-    // Boise, Idaho
-    lat = 43.618881;
-    lon = -116.215019;
-    weather = await getWeather(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Boise, Idaho " + weather);
-
-    // Helena, Montana
-    lat = 46.595806;
-    lon = -112.027031;
-    weather = await getWeather(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Helena, Montana " + weather);
-
-    // Carson City, Nevada
-    lat = 39.162418;
-    lon = -119.787010;
-    weather = await getWeather(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Carson City, Nevada " + weather);
-    
-    // Albany, New York
-    lat = 42.652580;
-    lon = -73.756233;
-    weather = await getWeather(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Albany, New York " + weather);
-
-    // Salem, Oregon
-    lat = 44.944099;
-    lon = -123.040283;
-    weather = await getWeather(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Salem, Oregon " + weather);
-    
     // Austin, Texas
     lat = 30.266666;
     lon = -97.733330;
     weather = await getWeather(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Austin, Texas " + weather);
-
-    // Salt Lake City, Utah
-    lat = 40.758701;
-    lon = -111.876183;
-    weather = await getWeather(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Salt Lake City, Utah " + weather);
     
-    // Olympia, Washington
-    lat = 47.037872;
-    lon = -122.900696;
+    // Dallas, Texas
+    lat = 32.779167;
+    lon = -96.808891;
     weather = await getWeather(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Olympia, Washington " + weather);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Dallas, Texas " + weather);
 
+    // Fort Worth, Texas
+    lat = 32.768799;
+    lon = -97.309341;
+    weather = await getWeather(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Fort Worth, Texas " + weather);
+
+    // Houston, Texas
+    lat = 29.749907;
+    lon = -95.358421;
+    weather = await getWeather(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Houston, Texas " + weather);
+
+    // San Antonio, Texas
+    lat = 29.424349;
+    lon = -98.491142;
+    weather = await getWeather(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("San Antonio, Texas " + weather);
+
+    // Bellevue, Washington
+    lat = 47.610378;
+    lon = -122.200676;
+    weather = await getWeather(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Bellevue, Washington " + weather);
+    
     // Seattle, Washington
     lat = 47.608013;
     lon = -122.335167;
@@ -90,12 +72,12 @@ async function getMap()
     lon = -117.426048;
     weather = await getWeather(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Spokane, Washington " + weather);
-    
-    // Cheyenne, Wyoming
-    lat = 41.161079;
-    lon = -104.805450;
+
+    // Vancouver, Washington
+    lat = 45.633331;
+    lon = -122.599998;
     weather = await getWeather(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Cheyenne, Wyoming " + weather);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Vancouver, Washington " + weather);
 }
 
 setInterval( function() { getMap(); }, 60 * 1000 * 15);
