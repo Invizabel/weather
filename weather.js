@@ -61,11 +61,41 @@ async function getMap()
     weather = await getWeather(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Austin, Texas " + weather);
 
+    // Salt Lake City, Utah
+    lat = 40.758701;
+    lon = -111.876183;
+    weather = await getWeather(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Salt Lake City, Utah " + weather);
+    
     // Olympia, Washington
     lat = 47.037872;
     lon = -122.900696;
     weather = await getWeather(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Olympia, Washington " + weather);
+
+    // Seattle, Washington
+    lat = 47.608013;
+    lon = -122.335167;
+    weather = await getWeather(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Seattle, Washington " + weather);
+
+    // Tacoma, Washington
+    lat = 47.258728;
+    lon = -122.465973;
+    weather = await getWeather(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Tacoma, Washington " + weather);
+
+    // Spokane, Washington
+    lat = 47.658779;
+    lon = -117.426048;
+    weather = await getWeather(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Spokane, Washington " + weather);
+    
+    // Cheyenne, Wyoming
+    lat = 41.161079;
+    lon = -104.805450;
+    weather = await getWeather(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Cheyenne, Wyoming " + weather);
 }
 
 setInterval( function() { getMap(); }, 60 * 1000 * 15);
