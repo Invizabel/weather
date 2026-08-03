@@ -1,9 +1,9 @@
 async function getCanada(lat, lon)
 {
     let buffer = 0.1;
-    let bbox  = "${lon - buffer},${lat - buffer},${lon + buffer},${lat + buffer}";
+    let bbox  = `${lon - buffer},${lat - buffer},${lon + buffer},${lat + buffer}`;
     let params = new URLSearchParams({"f": "json", "bbox": bbox});
-    let request = await fetch("https://api.weather.gc.ca/collections/citypageweather-realtime/items?" + params);
+    let request = await fetch(`https://api.weather.gc.ca/collections/citypageweather-realtime/items?${params}`);
     console.log(request);
     let response = await request.json();
     let weather = response["properties"];
