@@ -9,7 +9,7 @@ async function getCanada(lat, lon)
     
     let current_temperature = weather["currentConditions"]["temperature"]["value"] + " C";
     let current_forecast = weather["currentConditions"]["condition"]["en"];
-    let current_wind = weather["currentConditions"]["wind"]["speed"]["value"]["en"] + " " + weather["properties"]["currentConditions"]["wind"]["direction"]["value"]["en"] + " km/h";
+    let current_wind = weather["currentConditions"]["wind"]["speed"]["value"]["en"] + " " + weather["currentConditions"]["wind"]["direction"]["value"]["en"] + " km/h";
     weather = "<br>Current temperature:  " + current_temperature + "<br>" +  "Current forecast:  " + current_forecast + "<br>" +  "Current wind:  " + current_wind;
     return weather;
 }
