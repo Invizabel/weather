@@ -35,77 +35,87 @@ async function getMap()
 
     let tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 20, attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"}).addTo(myMap);
 
+    // United States:
+    
     // Phoenix, Arizona
     lat = 33.448376;
     lon = -112.074036;
     weather = await getUnitedStates(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Phoenix, Arizona " + weather);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Phoenix, Arizona, United States " + weather);
     
     // Sacramento, California
     lat = 38.575764;
     lon = -121.478851;
     weather = await getUnitedStates(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Sacramento, California " + weather);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Sacramento, California, United States " + weather);
 
     // Denver, Colorado
     lat = 39.742043;
     lon = -104.991531;
     weather = await getUnitedStates(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Denver, Colorado " + weather);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Denver, Colorado, United States " + weather);
 
     // Boise, Idaho
     lat = 43.618881;
     lon = -116.215019;
     weather = await getUnitedStates(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Boise, Idaho " + weather);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Boise, Idaho, United States " + weather);
 
     // Helena, Montana
     lat = 46.595806;
     lon = -112.027031;
     weather = await getUnitedStates(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Helena, Montana " + weather);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Helena, Montana, United States " + weather);
     
     // Carson City, Nevada
     lat = 39.162418;
     lon = -119.787010;
     weather = await getUnitedStates(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Carson City, Nevada " + weather);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Carson City, Nevada, United States " + weather);
 
     // Santa Fe, New Mexico
     lat = 35.691544;
     lon = -105.944183;
     weather = await getUnitedStates(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Santa Fe, New Mexico " + weather);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Santa Fe, New Mexico, United States " + weather);
 
     // Bismarck, North Dakota
     lat = 46.825905;
     lon = -100.778275;
     weather = await getUnitedStates(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Bismarck, North Dakota " + weather);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Bismarck, North Dakota, United States " + weather);
     
     // Salem, Oregon
     lat = 44.944099;
     lon = -123.040283;
     weather = await getUnitedStates(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Salem, Oregon " + weather);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Salem, Oregon, United States " + weather);
 
     // Salt Lake City, Utah
     lat = 40.758701;
     lon = -111.876183;
     weather = await getUnitedStates(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Salt Lake City, Utah " + weather);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Salt Lake City, Utah, United States " + weather);
 
     // Olympia, Washington
     lat = 47.037872;
     lon = -122.900696;
     weather = await getUnitedStates(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Olympia, Washington " + weather);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Olympia, Washington, United States " + weather);
 
     // Cheyenne, Wyoming
     lat = 41.161079;
     lon = -104.805450;
     weather = await getUnitedStates(lat, lon);
-    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Cheyenne, Wyoming " + weather);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Cheyenne, Wyoming, United States " + weather);
+
+    // Canada:
+
+    // Victoria, British Columbia, Canada
+    lat = 48.407326;
+    lon = -123.329773;
+    weather = await getUnitedStates(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Victoria, British Columbia, Canada " + weather);
 }
 
 setInterval( function() { getMap(); }, 60 * 1000 * 15);
