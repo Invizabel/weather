@@ -3,7 +3,7 @@ async function getCanada(lat, lon)
     let buffer = 0.1;
     let bbox  = "${lon - buffer},${lat - buffer},${lon + buffer},${lat + buffer}";
     let params = new URLSearchParams({"f": "json", "bbox": bbox});
-    let request = await fetch("https://api.weather.gc.ca/collections/citypageweather-realtime/items?${params}")
+    let request = await fetch("https://api.weather.gc.ca/collections/citypageweather-realtime/items?${params}");
     let response = await request.json();
     let weather = response["properties";
     
@@ -114,7 +114,7 @@ async function getMap()
     // Victoria, British Columbia, Canada
     lat = 48.407326;
     lon = -123.329773;
-    weather = await getUnitedStates(lat, lon);
+    weather = await getCanada(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Victoria, British Columbia, Canada " + weather);
 }
 
