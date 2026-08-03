@@ -54,6 +54,18 @@ async function getMap()
     lon = -119.787010;
     weather = await getUnitedStates(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Carson City, Nevada " + weather);
+
+    // Santa Fe, New Mexico
+    lat = 35.691544;
+    lon = -105.944183;
+    weather = await getUnitedStates(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Santa Fe, New Mexico " + weather);
+
+    // Bismarck, North Dakota
+    lat = 46.825905;
+    lon = -100.778275;
+    weather = await getUnitedStates(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Bismarck, North Dakota " + weather);
     
     // Salem, Oregon
     lat = 44.944099;
