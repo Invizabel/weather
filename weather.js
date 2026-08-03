@@ -7,7 +7,7 @@ async function getCanada(lat, lon)
     let response = await request.json();
     let weather = response["properties"];
     
-    let current_temperature = feature["properties"]["currentConditions"]["temperature"]["value"] + " C";
+    let current_temperature = weather["properties"]["currentConditions"]["temperature"]["value"] + " C";
     let current_forecast = weather["currentConditions"]["condition"]["en"];
     let current_wind = weather["properties"]["currentConditions"]["wind"]["speed"]["value"]["en"] + " " + weather["properties"]["currentConditions"]["wind"]["direction"]["value"]["en"] + " km/h";
     weather = "<br>Current temperature:  " + current_temperature + "<br>" +  "Current forecast:  " + current_forecast + "<br>" +  "Current wind:  " + current_wind;
