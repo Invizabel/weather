@@ -9,7 +9,7 @@ async function getCanada(lat, lon)
     
     let current_temperature = weather["currentConditions"]["temperature"]["value"]["en"] + " C";
     let current_forecast = weather["currentConditions"]["condition"]["en"];
-    let current_wind = weather["currentConditions"]["wind"]["speed"]["value"]["en"] + " " + weather["currentConditions"]["wind"]["direction"]["value"]["en"] + " km/h";
+    let current_wind = weather["currentConditions"]["wind"]["speed"]["value"]["en"] + " km/h " + weather["currentConditions"]["wind"]["direction"]["value"]["en"];
     weather = "<br>Current temperature:  " + current_temperature + "<br>" +  "Current forecast:  " + current_forecast + "<br>" +  "Current wind:  " + current_wind;
     return weather;
 }
@@ -24,7 +24,7 @@ async function getUnitedStates(lat, lon)
     let weather = await request2.json();
     let current_temperature = weather["properties"]["periods"][0]["temperature"] + " F";
     let current_forecast = weather["properties"]["periods"][0]["shortForecast"];
-    let current_wind = weather["properties"]["periods"][0]["windSpeed"] + " " + weather["properties"]["periods"][0]["windDirection"] + ", mph";
+    let current_wind = weather["properties"]["periods"][0]["windSpeed"] + " mph " + weather["properties"]["periods"][0]["windDirection"];
     weather = "<br>Current temperature:  " + current_temperature + "<br>" +  "Current forecast:  " + current_forecast + "<br>" +  "Current wind:  " + current_wind;
     return weather;
 }
