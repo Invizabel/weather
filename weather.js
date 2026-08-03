@@ -5,7 +5,7 @@ async function getCanada(lat, lon)
     let params = new URLSearchParams({"f": "json", "bbox": bbox});
     let request = await fetch(`https://api.weather.gc.ca/collections/citypageweather-realtime/items?${params}`);
     let response = await request.json();
-    console.log(response);
+    console.log(response["properties"]);
     let weather = response["properties"];
     
     let current_temperature = weather["properties"]["currentConditions"]["temperature"]["value"] + " C";
