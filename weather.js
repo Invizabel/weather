@@ -1,20 +1,32 @@
 async function getCanada(lat, lon)
 {
-    let buffer = 0.5;
+    let buffer = 1;
     let bbox  = `${lon - buffer},${lat - buffer},${lon + buffer},${lat + buffer}`;
     let params = new URLSearchParams({"f": "json", "bbox": bbox});
     let request = await fetch(`https://api.weather.gc.ca/collections/citypageweather-realtime/items?${params}`);
     let response = await request.json();
-    let weather = response["features"][0]["properties"];
+	
+	for (let i = 0; i < response["features"].length; i += 1)
+	{
+		try
+		{
+			let weather = response["features"][i]["properties"];
 
-    console.log(weather["currentConditions"]["condition"]);
-    
-    let current_temperature = weather["currentConditions"]["temperature"]["value"]["en"] + " C";
-    let current_forecast = weather["currentConditions"]["condition"]["en"];
-    let current_wind = weather["currentConditions"]["wind"]["speed"]["value"]["en"] + " km/h " + weather["currentConditions"]["wind"]["direction"]["value"]["en"];
-    weather = "<br>Current temperature:  " + current_temperature + "<br>" +  "Current forecast:  " + current_forecast + "<br>" +  "Current wind:  " + current_wind;
-    
-    return weather;
+			let current_temperature = weather["currentConditions"]["temperature"]["value"]["en"] + " C";
+			let current_forecast = weather["currentConditions"]["condition"]["en"];
+			let current_wind = weather["currentConditions"]["wind"]["speed"]["value"]["en"] + " km/h " + weather["currentConditions"]["wind"]["direction"]["value"]["en"];
+			weather = "<br>Current temperature:  " + current_temperature + "<br>" +  "Current forecast:  " + current_forecast + "<br>" +  "Current wind:  " + current_wind;
+			
+			return weather;
+		}
+		
+		catch
+		{
+			// pass
+		}
+	}
+
+    return "<br>Failed fetching weather!"
 }
 
 async function getUnitedStates(lat, lon)
