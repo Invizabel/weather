@@ -27,6 +27,7 @@ async function getUnitedStates(lat, lon)
     let current_forecast = weather["properties"]["periods"][0]["shortForecast"];
     let current_wind = weather["properties"]["periods"][0]["windSpeed"] + " " + weather["properties"]["periods"][0]["windDirection"];
     weather = "<br>Current temperature:  " + current_temperature + "<br>" +  "Current forecast:  " + current_forecast + "<br>" +  "Current wind:  " + current_wind;
+    
     return weather;
 }
 
