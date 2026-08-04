@@ -79,6 +79,12 @@ async function getMap()
     weather = await getUnitedStates(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Santa Fe, New Mexico, United States " + weather);
 
+    // Lincoln, Nebraska
+    lat = 40.806862;
+    lon = -96.681679;
+    weather = await getUnitedStates(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Lincoln, Nebraska, United States " + weather);
+    
     // Bismarck, North Dakota
     lat = 46.825905;
     lon = -100.778275;
@@ -91,6 +97,12 @@ async function getMap()
     weather = await getUnitedStates(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Salem, Oregon, United States " + weather);
 
+    // Pierre, South Dakota
+    lat = 44.374722;
+    lon = -100.320556;
+    weather = await getUnitedStates(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Pierre, South Dakota, United States " + weather);
+    
     // Salt Lake City, Utah
     lat = 40.758701;
     lon = -111.876183;
@@ -111,6 +123,12 @@ async function getMap()
 
     // Canada:
 
+    // Edmonton, Alberta, Canada
+    lat = 53.631611;
+    lon = -113.323975;
+    weather = await getCanada(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Edmonton, Alberta, Canada " + weather);
+    
     // Victoria, British Columbia, Canada
     lat = 48.407326;
     lon = -123.329773;
