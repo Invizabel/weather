@@ -77,6 +77,12 @@ async function getMap()
     weather = await getUnitedStates(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Boise, Idaho, United States " + weather);
 
+	// Topeka, Kansas
+    lat = 39.056198;
+    lon = -95.695312;
+    weather = await getUnitedStates(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Topeka, Kansas, United States " + weather);
+	
     // Helena, Montana
     lat = 46.595806;
     lon = -112.027031;
@@ -106,7 +112,13 @@ async function getMap()
     lon = -100.778275;
     weather = await getUnitedStates(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Bismarck, North Dakota, United States " + weather);
-    
+
+	// Oklahoma City, Oklahoma
+    lat = 35.481918;
+    lon = -97.508469;
+    weather = await getUnitedStates(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Oklahoma City, Oklahoma, United States " + weather);
+	
     // Salem, Oregon
     lat = 44.944099;
     lon = -123.040283;
@@ -150,6 +162,12 @@ async function getMap()
     lon = -123.329773;
     weather = await getCanada(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Victoria, British Columbia, Canada " + weather);
+
+	// Whitehorse, Yukon, Canada
+    lat = 60.721188;
+    lon = -135.056839;
+    weather = await getCanada(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Whitehorse, Yukon, Canada " + weather);
 }
 
 setInterval( function() { getMap(); }, 60 * 1000 * 15);
