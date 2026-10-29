@@ -82,6 +82,12 @@ async function getMap()
     lon = -95.695312;
     weather = await getUnitedStates(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Topeka, Kansas, United States " + weather);
+
+	// Saint Paul, Minnesota
+    lat = 44.954445;
+    lon = -93.091301;
+    weather = await getUnitedStates(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Saint Paul, Minnesota, United States " + weather);
 	
     // Helena, Montana
     lat = 46.595806;
@@ -163,6 +169,12 @@ async function getMap()
     weather = await getCanada(lat, lon);
     tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Victoria, British Columbia, Canada " + weather);
 
+	// Regina, Saskatchewan, Canada
+    lat = 50.445210;
+    lon = -104.618896;
+    weather = await getCanada(lat, lon);
+    tile = L.marker([lat, lon]).addTo(myMap).bindPopup("Regina, Saskatchewan, Canada " + weather);
+	
 	// Whitehorse, Yukon, Canada
     lat = 60.721188;
     lon = -135.056839;
